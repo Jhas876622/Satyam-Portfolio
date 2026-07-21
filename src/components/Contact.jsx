@@ -34,9 +34,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID || 'mnjezbzg';
 
-    if (formspreeId && formspreeId !== 'YOUR_FORMSPREE_ID') {
+    if (formspreeId) {
       try {
         const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
           method: 'POST',
