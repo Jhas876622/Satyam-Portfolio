@@ -107,9 +107,6 @@ const Contact = () => {
                 <><Send size={15} /> Send message</>
               )}
             </button>
-            <p className="font-mono text-[10px] text-center" style={{ color: 'var(--text-dim)' }}>
-              Set <code className="text-white">VITE_FORMSPREE_ID</code> in <code className="text-white">.env</code> to connect live emails.
-            </p>
           </form>
         </div>
       </div>

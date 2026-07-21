@@ -142,12 +142,42 @@ export const PROJECTS = [
 ];
 
 export const CERTIFICATIONS = [
-  { title: 'Data Analytics Job Simulation', issuer: 'Deloitte Australia', icon: Trophy },
-  { title: 'Career Essentials in Data Analysis', issuer: 'Microsoft · LinkedIn', icon: Award },
-  { title: 'Get Started with Microsoft Data Analytics', issuer: 'Microsoft', icon: Award },
-  { title: 'Data Science', issuer: 'GeeksforGeeks', icon: Award },
-  { title: 'Power BI Workshop', issuer: 'Workshop Certificate', icon: LineChart },
-  { title: 'CGPA 8.4 / 10', issuer: 'Through Semester 6 · BPIT', icon: GraduationCap },
+  {
+    title: 'Data Analytics Job Simulation',
+    issuer: 'Deloitte Australia',
+    icon: Trophy,
+    description: 'Practical business data analysis, data cleansing, and insight generation simulation.',
+  },
+  {
+    title: 'Career Essentials in Data Analysis',
+    issuer: 'Microsoft · LinkedIn',
+    icon: Award,
+    description: 'Foundational data analysis methodology, data querying, and visualization principles.',
+  },
+  {
+    title: 'Get Started with Microsoft Data Analytics',
+    issuer: 'Microsoft',
+    icon: Award,
+    description: 'Data ingestion, modeling, and analytical report generation with Microsoft BI stack.',
+  },
+  {
+    title: 'Data Science',
+    issuer: 'GeeksforGeeks',
+    icon: Award,
+    description: 'Hands-on machine learning algorithms, model evaluation, and Python data pipelines.',
+  },
+  {
+    title: 'Power BI Workshop',
+    issuer: 'Workshop Certificate',
+    icon: LineChart,
+    description: 'Building interactive dashboards, DAX queries, and KPI reporting graphics.',
+  },
+  {
+    title: 'CGPA 8.4 / 10',
+    issuer: 'Through Semester 6 · BPIT',
+    icon: GraduationCap,
+    description: 'Consistently high academic standing in BTech Information Technology curriculum.',
+  },
 ];
 
 export const NAV_ITEMS = [
