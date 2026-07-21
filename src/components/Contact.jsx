@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, ArrowUpRight, Loader2 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { PROFILE } from '../data/portfolioData';
 import { useToast } from './Toast';
@@ -27,19 +27,44 @@ const ContactLink = ({ href, icon: Icon, label, value }) => (
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const { showToast } = useToast();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Contact form payload:', form);
-    
-    // Simulate API request and show toast feedback
-    setSent(true);
-    showToast('Message logged successfully! Hook up Formspree or EmailJS to receive emails.', 'success');
-    
-    setTimeout(() => setSent(false), 3500);
-    setForm({ name: '', email: '', message: '' });
+    setLoading(true);
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
+
+    if (formspreeId && formspreeId !== 'YOUR_FORMSPREE_ID') {
+      try {
+        const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(form),
+        });
+
+        if (res.ok) {
+          setSent(true);
+          showToast("Message sent! I'll get back to you soon.", 'success');
+          setForm({ name: '', email: '', message: '' });
+        } else {
+          showToast('Failed to send via backend. Opening your email app...', 'error');
+          window.location.href = `mailto:${PROFILE.email}?subject=Contact%20from%20Portfolio&body=${encodeURIComponent(form.message)}`;
+        }
+      } catch (err) {
+        showToast('Network error. Opening your email app...', 'error');
+        window.location.href = `mailto:${PROFILE.email}?subject=Contact%20from%20Portfolio&body=${encodeURIComponent(form.message)}`;
+      }
+    } else {
+      // Demo mode fallback
+      console.log('Contact form payload:', form);
+      setSent(true);
+      showToast('Message received! Add VITE_FORMSPREE_ID to .env to receive live emails.', 'success');
+      setTimeout(() => setSent(false), 4000);
+      setForm({ name: '', email: '', message: '' });
+    }
+    setLoading(false);
   };
 
   return (
@@ -59,7 +84,7 @@ const Contact = () => {
               <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>Open to Data Analyst, Product Analyst, and SDE roles — starting Summer 2026 or immediately for the right team.</p>
             </div>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="reveal p-6 md:p-8 rounded-2xl space-y-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
             <Field label="Name">
               <input required type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name"
@@ -73,10 +98,18 @@ const Contact = () => {
               <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell me about the role or the problem you're working on."
                 className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: 'var(--bg-elev)', border: '1px solid var(--border)', color: 'var(--text)' }} />
             </Field>
-            <button type="submit" className="btn-shine glow-hover w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-medium text-sm">
-              {sent ? "Message received — I'll reply soon." : (<><Send size={15} /> Send message</>)}
+            <button disabled={loading} type="submit" className="btn-shine glow-hover w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-accent text-white font-medium text-sm disabled:opacity-50">
+              {loading ? (
+                <><Loader2 size={15} className="animate-spin" /> Sending...</>
+              ) : sent ? (
+                "Message received — I'll reply soon."
+              ) : (
+                <><Send size={15} /> Send message</>
+              )}
             </button>
-            <p className="font-mono text-[10px] text-center" style={{ color: 'var(--text-dim)' }}>Form UI only. Hook up Formspree / EmailJS to send for real.</p>
+            <p className="font-mono text-[10px] text-center" style={{ color: 'var(--text-dim)' }}>
+              Set <code className="text-white">VITE_FORMSPREE_ID</code> in <code className="text-white">.env</code> to connect live emails.
+            </p>
           </form>
         </div>
       </div>
