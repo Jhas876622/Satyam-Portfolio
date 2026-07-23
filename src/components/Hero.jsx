@@ -77,7 +77,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden"
               style={{ border: '2px solid var(--border-strong)', background: 'var(--surface)' }}>
               {PROFILE.photoUrl && !PROFILE.photoUrl.startsWith('__') ? (
-                <img src={PROFILE.photoUrl} alt="Satyam Kumar Jha" className="w-full h-full object-cover" style={{ objectPosition: '50% 22%' }} />
+                <img src={PROFILE.photoUrl} alt="Satyam Kumar Jha" className="w-full h-full object-cover" style={{ objectPosition: '50% 18%' }} />
               ) : (
                 <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-6 text-center">
                   <div className="w-20 h-20 rounded-full bg-gradient-accent flex items-center justify-center font-display font-bold text-3xl text-white">SJ</div>
