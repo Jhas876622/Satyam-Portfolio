@@ -8,9 +8,9 @@ const About = () => (
       <SectionHeader num="01/" eyebrow="About" title="A ship-first mindset." />
       <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16">
         <div className="reveal space-y-4 text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-          <p>I'm a final-year IT student who treats every course concept as a candidate for a deployed project. My work sits at the intersection of <span style={{ color: 'var(--text)' }}>data analysis</span>, <span style={{ color: 'var(--text)' }}>machine learning</span>, and <span style={{ color: 'var(--text)' }}>product thinking</span> — turning messy data into decisions someone can act on.</p>
-          <p>Recently I've built end-to-end systems: an inventory intelligence platform for perishable goods, an A/B-testing analytics tool, and a real-time CV service — all live, all reachable through a URL. I care about statistical rigor, but equally about whether a business user could open the dashboard and know what to do next.</p>
-          <p>I'm looking for roles where I can pair analytical depth with product judgment — Data Analytics, Product Analyst, and Software Engineering opportunities where I can keep shipping.</p>
+          <p>I'm a final-year IT student who treats every course concept as a candidate for a deployed project. My work sits at the intersection of <span style={{ color: 'var(--text)' }}>data analysis</span>, <span style={{ color: 'var(--text)' }}>machine learning</span>, and <span style={{ color: 'var(--text)' }}>product thinking</span>, turning messy data into decisions someone can act on.</p>
+          <p>Recently I've built end-to-end systems: an inventory intelligence platform for perishable goods, an A/B-testing analytics tool, and a real-time CV service, all live and reachable through a URL. I care about statistical rigor, but equally about whether a business user could open the dashboard and know what to do next.</p>
+          <p>I'm looking for Data & Business Analyst roles where I can pair analytical depth with data-driven product judgment, and keep shipping.</p>
         </div>
         <div className="reveal grid grid-cols-1 gap-3">
           {QUICK_FACTS.map((f) => (

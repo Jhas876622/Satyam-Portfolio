@@ -14,7 +14,7 @@ const Experience = () => (
             <div key={i} className="reveal md:grid md:grid-cols-[7rem_1fr] md:gap-8" style={{ transitionDelay: `${i * 90}ms` }}>
               <div className="hidden md:block relative pt-1">
                 <div className="absolute left-[6.75rem] top-2 w-3 h-3 rounded-full" style={{ background: 'var(--accent-2)', boxShadow: '0 0 0 4px var(--bg)' }} />
-                <div className="font-mono text-xs whitespace-nowrap" style={{ color: 'var(--text-dim)' }}>{exp.period.split('—')[0].trim()}</div>
+                <div className="font-mono text-xs whitespace-nowrap" style={{ color: 'var(--text-dim)' }}>{exp.period.split('-')[0].trim()}</div>
               </div>
               <div className="glow-hover p-6 md:p-7 rounded-2xl" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">

@@ -70,7 +70,7 @@ const Contact = () => {
   return (
     <section id="contact" className="relative py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
-        <SectionHeader num="07/" eyebrow="Contact" title="Let's talk." tagline="Full-time, internships, or an interesting problem — my inbox is open." />
+        <SectionHeader num="07/" eyebrow="Contact" title="Let's talk." tagline="Full-time, internships, or an interesting problem, my inbox is open." />
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-12">
           <div className="reveal space-y-3">
             <ContactLink href={`mailto:${PROFILE.email}`} icon={Mail} label="Email" value={PROFILE.email} />
@@ -81,7 +81,7 @@ const Contact = () => {
                 <span className="w-2 h-2 rounded-full live-dot" style={{ background: 'var(--live)' }} />
                 <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color: 'var(--text-dim)' }}>Currently</span>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>Open to Data Analyst, Product Analyst, and SDE roles — starting Summer 2026 or immediately for the right team.</p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>Open to Data & Business Analyst roles, starting Summer 2026 or immediately for the right team.</p>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ const Contact = () => {
               {loading ? (
                 <><Loader2 size={15} className="animate-spin" /> Sending...</>
               ) : sent ? (
-                "Message received — I'll reply soon."
+                "Message received. I'll reply soon."
               ) : (
                 <><Send size={15} /> Send message</>
               )}

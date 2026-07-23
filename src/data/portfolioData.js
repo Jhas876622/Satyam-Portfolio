@@ -14,7 +14,7 @@ export const PROFILE = {
   greeting: "Hello, I'm",
   bio: [
     "I'm Satyam, a data and ML enthusiast in my final year of BTech (IT) at Bhagwan Parshuram Institute of Technology, New Delhi.",
-    "I got into tech because I liked solving problems — and stayed because I realized you can actually ship solutions, not just study them. Every project I've built is deployed and live.",
+    "I got into tech because I liked solving problems, and stayed because I realized you can actually ship solutions, not just study them. Every project I've built is deployed and live.",
   ],
   location: 'New Delhi, India',
   email: 'jha876622@gmail.com',
@@ -24,7 +24,7 @@ export const PROFILE = {
   photoUrl: PHOTO,
 };
 
-export const ROLES = ['Data Analyst', 'Business Analyst', 'Product Analyst', 'Software Engineer'];
+export const ROLES = ['Data & Business Analyst'];
 
 export const STATS = [
   { value: 4, suffix: '+', decimals: 0, label: 'Live, deployed projects', icon: Rocket },
@@ -42,7 +42,7 @@ export const HERO_CHIPS = [
 export const QUICK_FACTS = [
   { label: 'Degree', value: 'BTech, Information Technology' },
   { label: 'Institution', value: 'BPIT · GGSIPU, New Delhi' },
-  { label: 'Batch', value: '2023 — 2027' },
+  { label: 'Batch', value: '2023 - 2027' },
   { label: 'CGPA', value: '8.4 / 10' },
   { label: 'Focus', value: 'Data Analytics · ML · Product' },
 ];
@@ -62,11 +62,11 @@ export const EXPERIENCE = [
   {
     role: 'Data Analytics Intern',
     org: 'LearnToUpgrade',
-    period: 'Jun 2025 — Aug 2025',
+    period: 'Jun 2025 - Aug 2025',
     mode: 'Hybrid · New Delhi',
     points: [
       'Built an interactive data-exploration platform in Streamlit letting non-technical users upload datasets, generate synthetic data, and run EDA without writing code.',
-      'Shipped a responsive, production-ready UI with advanced visualizations — the primary deliverable of the internship.',
+      'Shipped a responsive, production-ready UI with advanced visualizations, which was the primary deliverable of the internship.',
     ],
   },
 ];
@@ -75,7 +75,7 @@ export const COMMUNITY_LEADERSHIP = [
   {
     role: 'Treasurer',
     org: 'Drishti Rotaract Club',
-    period: 'Oct 2023 — Present',
+    period: 'Oct 2023 - Present',
     mode: 'Leadership · BPIT',
     points: [
       'Manage club finances, budgets, and reimbursements across all events and outreach drives.',
@@ -85,7 +85,7 @@ export const COMMUNITY_LEADERSHIP = [
   {
     role: 'Sponsorship Head',
     org: 'BPIT Cultural Committee',
-    period: '2024 — 2025',
+    period: '2024 - 2025',
     mode: 'Leadership · College Fest',
     points: [
       'Led sponsorship outreach for the annual cultural fest; secured brand partnerships across verticals.',
@@ -96,10 +96,10 @@ export const COMMUNITY_LEADERSHIP = [
 
 export const PROJECTS = [
   {
-    title: 'PISA — Predictive Inventory & Spoilage Alert System',
+    title: 'PISA (Predictive Inventory & Spoilage Alert System)',
     tagline: 'AI supply-chain intelligence inspired by Zomato Hyperpure',
     description:
-      'Two-model ML pipeline — Gradient Boosting for demand forecasting and Random Forest for spoilage-risk classification — using time, weather, festival, and inventory-age features to drive procurement decisions. An optimization engine balances overstocking vs. understocking cost to recommend purchase quantities.',
+      'Two-model ML pipeline (Gradient Boosting for demand forecasting and Random Forest for spoilage-risk classification) using time, weather, festival, and inventory-age features to drive procurement decisions. An optimization engine balances overstocking vs. understocking cost to recommend purchase quantities.',
     stack: ['Python', 'Scikit-learn', 'Streamlit', 'Plotly', 'Gradient Boosting', 'Random Forest'],
     live: 'https://hyperpure-pisa.streamlit.app',
     github: 'https://github.com/Jhas876622/Zomato-Hyperpure_PISA',
@@ -119,7 +119,7 @@ export const PROJECTS = [
   },
   {
     title: 'Advanced EDA Visualizer',
-    tagline: 'Codeless exploratory analysis — internship deliverable',
+    tagline: 'Codeless exploratory analysis, an internship deliverable',
     description:
       'Interactive EDA tool that lets users upload datasets, explore built-in samples, and generate synthetic data. Built for beginners and analysts alike, wrapping pandas + Plotly behind a clean Streamlit UI.',
     stack: ['Python', 'Streamlit', 'Plotly', 'pandas', 'NumPy'],
